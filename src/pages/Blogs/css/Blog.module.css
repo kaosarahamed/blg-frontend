@@ -1,0 +1,48 @@
+.blogPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: 1400px;
+  margin: 50px auto;
+}
+.blog {
+  width: 100%;
+}
+.blog button {
+  margin: 50px auto;
+  padding: 15px 50px;
+  background-color: #000;
+  transition: 0.3s ease-in;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  cursor: pointer;
+}
+.blog button:hover {
+  background-color: #3f63c8;
+  color: #fff;
+  padding: 15px 70px;
+}
+.blogPage h1 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #404145;
+}
+@media screen and (max-width: 1420px) {
+  .blogPage {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .blogPage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .blogPage {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

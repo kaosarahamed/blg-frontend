@@ -1,0 +1,87 @@
+.settings {
+  display: block;
+  margin-left: 260px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  margin-top: 90px;
+  width: 50%;
+}
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.logoSetting {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #e4e5e7;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.logoHeader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.logoHeader h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #404145;
+}
+.logoHeader img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+.logoHeader span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.commentBody {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.commentBody h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #404145;
+}
+.commentBody h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #404145;
+}
+.button a {
+  text-decoration: none;
+  padding: 15px 50px;
+  background-color: #3f63c8;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.3s ease-in;
+}
+.button a:hover {
+  background-color: #404145;
+  padding: 15px 100px;
+}
+@media screen and (max-width: 768px) {
+  .settings {
+    margin-left: 0px;
+  }
+  .settings {
+    padding: 10px;
+  }
+  .logoLists span {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menuLists span {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,72 @@
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sochead h4 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #afafaf;
+  font-weight: 400;
+}
+.sochead h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #404145;
+  padding-top: 5px;
+}
+.socFb {
+  background-color: #3a589e;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.soctwit {
+  background-color: #429cd6;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.socLink {
+  background-color: #0077b5;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.socinsta {
+  background-color: #982491;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.socYou {
+  background-color: #ff0000;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.socialButtons p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.socialButtons svg {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+}

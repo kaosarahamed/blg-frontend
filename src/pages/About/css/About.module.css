@@ -1,0 +1,32 @@
+.aboutSection {
+  width: 100%;
+  height: 100%;
+}
+.aboutContainer {
+  width: 1400px;
+  height: 100%;
+  background-color: #fff;
+  padding: 50px;
+  box-sizing: border-box;
+  border: 1px solid #e4e5e7;
+  margin: 50px auto;
+}
+.aboutContainer h2 {
+  font-size: 30px;
+  font-size: 600;
+  color: #404145;
+  border-bottom: 1px solid #e4e5e7;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.aboutContainer p {
+  font-size: 20px;
+  font-size: 400;
+  color: #404145;
+  line-height: 30px;
+}
+@media screen and (max-width: 1420px) {
+  .aboutContainer {
+    width: 95%;
+  }
+}

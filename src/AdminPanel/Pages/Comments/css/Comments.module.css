@@ -1,0 +1,152 @@
+.dashComment {
+  display: block;
+  margin-left: 260px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  margin-top: 90px;
+}
+.dashcomContainer {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #e4e5e7;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.commentHeader {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  padding-bottom: 20px;
+}
+.commentHeader p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #404145;
+}
+.commentLists {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.commentsItem {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  align-items: flex-start;
+  border-bottom: 1px solid #e4e5e7;
+  padding-bottom: 10px;
+}
+.commentsItem h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #404145;
+  text-transform: capitalize;
+}
+.commentsItem img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.commentsItem p {
+  font-size: 16px;
+  color: #404145;
+  font-weight: 400;
+  line-height: 25px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-transform: capitalize;
+}
+.commentsItem span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.commentsItem h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #404145;
+}
+.commentsItem svg {
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #404145;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.commentsItem svg:hover {
+  background-color: #3f63c8;
+}
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #3f63c8;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.notification.active {
+  display: none;
+}
+
+.notification h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.notification svg {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+@media screen and (max-width: 1120px) {
+  .admin p {
+    font-size: 14px;
+  }
+  .commentHeader p {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .dashComment {
+    padding: 10px;
+  }
+  .dashcomContainer {
+    padding: 20px;
+  }
+  .commentHeader p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .commentHeader {
+    grid-gap: 20px;
+  }
+  .commentsLists {
+    grid-gap: 20px;
+  }
+  .commentsLists a {
+    font-size: 14px;
+  }
+  .commentsLists p {
+    font-size: 13px;
+  }
+  .admin h4 {
+    font-size: 13px;
+  }
+  .dashComment {
+    margin-left: 0px;
+  }
+}

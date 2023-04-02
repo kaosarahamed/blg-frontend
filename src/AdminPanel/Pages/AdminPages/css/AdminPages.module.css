@@ -1,0 +1,90 @@
+.dahsboardPages {
+  display: block;
+  margin-left: 260px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  margin-top: 90px;
+}
+.pagesContainer {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #e4e5e7;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.pagesHeader {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  padding-bottom: 20px;
+}
+.pagesHeader p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #404145;
+}
+.pageLists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  align-items: flex-start;
+}
+.pageLists h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #404145;
+}
+.pageLists p {
+  font-size: 16px;
+  color: #404145;
+  font-weight: 400;
+  line-height: 25px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pageLists span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+}
+.pageLists a {
+  font-size: 18px;
+  color: #404145;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pageLists a:hover {
+  color: #3f63c8;
+}
+@media screen and (max-width: 1120px) {
+  .pageLists span {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  .dahsboardPages {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .dahsboardPages {
+    padding: 10px;
+  }
+  .pagesContainer {
+    padding: 20px;
+  }
+  .pagesHeader {
+    display: none;
+  }
+  .pageLists {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

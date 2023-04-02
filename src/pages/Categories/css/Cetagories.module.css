@@ -1,0 +1,22 @@
+.catPostsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: 1400px;
+  margin: 50px auto;
+}
+@media screen and (max-width: 1420px) {
+  .catPostsList {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .catPostsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .catPostsList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

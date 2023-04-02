@@ -1,0 +1,40 @@
+.widgetTow {
+  width: 33%;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+.widgetThree {
+  width: 33%;
+}
+.widgetTow h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #404145;
+}
+.widgetTow span {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+.widgetTow a {
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s ease-in;
+  color: #404145;
+  font-weight: 500;
+}
+.widgetTow a:hover {
+  color: #3f63c8;
+}
+@media screen and (max-width: 1160px) {
+  .widgetTow {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .widgetTow {
+    padding-left: 0px;
+  }
+}

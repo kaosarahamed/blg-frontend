@@ -1,0 +1,172 @@
+.postSection {
+  width: 100%;
+  height: 100%;
+}
+.GridPost {
+  text-decoration: none;
+  color: #404145;
+}
+.postContainer {
+  width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+}
+.postWrapper {
+  display: flex;
+  gap: 30px;
+}
+.postArea {
+  width: 70%;
+}
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.post {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #e4e5e7;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.thamnails {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.thamnails img {
+  width: 100%;
+  border-radius: 10px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.postContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.postContent h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #404145;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-transform: capitalize;
+}
+.postContent p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #404145;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.postCategory {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.postCategory h3 {
+  text-decoration: none;
+  color: #fff;
+  background-color: #3f63c8;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.postAdminBar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.postAdminBar img {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.postAdminBar h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #404145;
+}
+.postAdminBar p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #404145;
+}
+.postActionTab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e4e5e7;
+  padding-top: 15px;
+}
+.postActionTab span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.postActionTab h4 {
+  text-decoration: none;
+  font-size: 18px;
+  color: #404145;
+  font-weight: 400;
+}
+.postActionTab i {
+  font-size: 16px;
+  color: #404145;
+}
+.postActionTab h4 {
+  font-size: 15px;
+  color: #404145;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1420px) {
+  .postContainer {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .postWrapper {
+    flex-direction: column;
+  }
+  .postArea {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .postSection {
+    margin-top: 30px;
+  }
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .postContent h2 {
+    font-size: 25px;
+  }
+}

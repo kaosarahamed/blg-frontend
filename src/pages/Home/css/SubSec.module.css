@@ -1,0 +1,98 @@
+.SubscribeSection {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+.subscribeContainer {
+  padding: 10px;
+  width: 1400px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.subscribeWrapper {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../Assists/images/mc4wp-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.subscribeWrapper h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #404145;
+}
+.subscribeWrapper p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #404145;
+}
+.subscribeWrapper form {
+  display: flex;
+  width: 50%;
+}
+.subscribeWrapper input {
+  border: none;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 40%;
+  font-size: 16px;
+  color: #404145;
+  font-weight: 500;
+}
+.subscribeWrapper input:focus {
+  outline: none;
+}
+.subscribeWrapper input[type="text"] {
+  border-radius: 50px 0px 0px 50px;
+  border-right: 1px solid #e4e5e7;
+}
+.subscribeWrapper button {
+  width: 20%;
+  border-radius: 0px 50px 50px 0px;
+  border: none;
+  background-color: #3f63c8;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media screen and (max-width: 1420px) {
+  .subscribeContainer {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .subscribeWrapper form {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .subscribeWrapper form {
+    width: 98%;
+  }
+  .subscribeWrapper h2 {
+    font-size: 20px;
+  }
+  .subscribeWrapper p {
+    font-size: 15px;
+    padding: 0px 10px;
+    text-align: center;
+  }
+  .subscribeWrapper input {
+    font-size: 13px;
+  }
+  .subscribeWrapper button {
+    font-size: 13px;
+    width: 25%;
+  }
+}

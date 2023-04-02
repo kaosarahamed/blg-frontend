@@ -1,0 +1,20 @@
+.widgetThree {
+  width: 33%;
+}
+.postHeader p {
+  font-size: 16px;
+  color: #3f63c8;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+.postHeader h3 {
+  font-size: 22px;
+  color: #404145;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+@media screen and (max-width: 1160px) {
+  .widgetThree {
+    width: 100%;
+  }
+}

@@ -1,0 +1,233 @@
+.sliderSection {
+  width: 100%;
+  margin-top: 30px;
+}
+.sliderArea a {
+  text-decoration: none;
+}
+.sliderContainer {
+  width: 1400px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.sliderItems {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.sliderArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.imgageSiderbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgageSiderbar img {
+  width: 100%;
+  border-radius: 10px 0px 0px 10px;
+  height: 100%;
+  object-fit: cover;
+}
+.contentSidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 40px;
+}
+.category {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.category h3 {
+  text-decoration: none;
+  color: #fff;
+  background-color: #3f63c8;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.title h2 {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 500;
+  color: #404145;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.adminBar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.adminBar img {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.adminBar h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #404145;
+}
+.adminBar p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #404145;
+}
+.body p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #404145;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.actionTab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e4e5e7;
+  padding-top: 20px;
+}
+.actionTab span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.actionTab h4 {
+  text-decoration: none;
+  font-size: 18px;
+  color: #404145;
+  font-weight: 400;
+}
+.actionTab i {
+  font-size: 16px;
+  color: #404145;
+}
+.actionTab h4 {
+  font-size: 15px;
+  color: #404145;
+  font-weight: 400;
+}
+.arrows .leftArrow {
+  position: absolute;
+  top: 45%;
+  left: -25px;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 20px;
+  color: #404145;
+  font-size: 20px;
+  border: 2px solid #e4e5e7;
+  cursor: pointer;
+}
+.arrows .rightArrow {
+  position: absolute;
+  top: 45%;
+  right: -25px;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 20px;
+  color: #404145;
+  font-size: 20px;
+  border: 2px solid #e4e5e7;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1470px) {
+  .sliderContainer {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .sliderContainer {
+    width: 92%;
+    height: 400px;
+  }
+  .title h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .body p {
+    font-size: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .actionTab a {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sliderContainer {
+    height: 350px;
+  }
+  .contentSidebar {
+    gap: 10px;
+  }
+  .title h2 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .arrows .leftArrow {
+    top: 42%;
+  }
+  .arrows .rightArrow {
+    top: 42%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .sliderContainer {
+    height: 700px;
+  }
+  .sliderArea {
+    flex-direction: column;
+  }
+  .imgageSiderbar img {
+    border-radius: 10px 10px 0px 0px;
+  }
+  .contentSidebar {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .arrows .rightArrow {
+    right: 0;
+    top: 25%;
+    padding: 12px;
+  }
+  .arrows .leftArrow {
+    left: 0;
+    top: 25%;
+    padding: 12px;
+  }
+}

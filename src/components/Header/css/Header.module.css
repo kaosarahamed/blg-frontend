@@ -1,0 +1,108 @@
+header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e5e7;
+  position: relative;
+}
+.headerContainer {
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  height: 100px;
+  background-color: #fff;
+}
+.logoAre img {
+  width: 150px;
+  height: 100%;
+}
+.menuArea {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.menuArea p {
+  display: none;
+}
+.menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.menu ul li {
+  list-style: none;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: #404145;
+  font-size: 18px;
+  font-weight: 500;
+}
+.menu ul li a:hover {
+  color: #3f63c8;
+}
+.menuArea img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+.menuArea h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #404145;
+}
+.menuArea svg {
+  font-size: 25px;
+  color: #404145;
+  cursor: pointer;
+}
+.menuArea p {
+  background-color: #3f63c8;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.menuArea p:hover {
+  background-color: #404145;
+}
+.menuArea p svg {
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+@media screen and (max-width: 1420px) {
+  .headerContainer {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .menu ul {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .menu {
+    display: none;
+  }
+  .menuArea p {
+    display: block;
+  }
+}
+@media screen and (max-width: 580px) {
+  .menuArea {
+    gap: 20px;
+  }
+  .menuArea p {
+    padding: 5px;
+  }
+  .logoAre img {
+    width: 100px;
+  }
+}

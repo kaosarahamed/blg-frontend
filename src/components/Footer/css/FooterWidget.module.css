@@ -1,0 +1,34 @@
+.footerWidgetSection {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-top: 1px solid #e4e5e7;
+}
+.footerWidgetContainer {
+  width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 50px 0px;
+}
+.widgets {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media screen and (max-width: 1420px) {
+  .footerWidgetContainer {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .widgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .widgets {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

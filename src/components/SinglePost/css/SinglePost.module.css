@@ -1,0 +1,19 @@
+.singlePost {
+  width: 100%;
+  height: 100%;
+}
+.singlePostContainer {
+  width: 1400px;
+  height: 100%;
+  margin: 50px auto;
+}
+.singlePostWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1420px) {
+  .singlePostContainer {
+    width: 98%;
+  }
+}
