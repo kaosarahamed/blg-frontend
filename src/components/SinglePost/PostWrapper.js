@@ -5,7 +5,7 @@ import Style from "./css/PostWrapper.module.css";
 
 function PostWrapper({data}) {
 
-  const {adminData} = useFetch("http://localhost:4000/admin");
+  const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/admin");
 
   const authorLogo = adminData.map((item) => item.adminPic);
   const adminname = adminData.map((item) => item.adminname);
@@ -13,12 +13,12 @@ function PostWrapper({data}) {
   return (
     <>
     <div className={Style.banner}>
-            <img src={data.postbanner && "http://localhost:4000"+data.postbanner.replace("public", "")} alt="" />
+            <img src={data.postbanner && "https://blog-app-fjqe.onrender.com"+data.postbanner.replace("public", "")} alt="" />
           </div>
           <div className={Style.content}>
             <div className={Style.adminWrapper}>
               <img
-                src={authorLogo[0] && "http://localhost:4000"+authorLogo[0].replace("public", "")}
+                src={authorLogo[0] && "https://blog-app-fjqe.onrender.com"+authorLogo[0].replace("public", "")}
                 alt=""
               />
               <span>

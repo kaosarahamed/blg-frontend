@@ -5,7 +5,7 @@ import Style from "./css/GridPosts.module.css";
 
 function GridPosts({post}) {
 
-  const {adminData} = useFetch("http://localhost:4000/admin");
+  const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/admin");
 
 const authorLogo = adminData.map((item) => item.adminPic);
 const adminname = adminData.map((item) => item.adminname);
@@ -18,7 +18,7 @@ const adminname = adminData.map((item) => item.adminname);
         <div className={Style.post}>
                 <div className={Style.thamnails}>
                   <img
-                    src={item.postbanner && "http://localhost:4000"+item.postbanner.replace("public", "")}
+                    src={item.postbanner && "https://blog-app-fjqe.onrender.com"+item.postbanner.replace("public", "")}
                     alt=""
                   />
                 </div>
@@ -31,7 +31,7 @@ const adminname = adminData.map((item) => item.adminname);
                   <h2>{item.title}</h2>
                   <div className={Style.postAdminBar}>
                     <img
-                      src={authorLogo[0] && "http://localhost:4000"+authorLogo[0].replace("public", "")}
+                      src={authorLogo[0] && "https://blog-app-fjqe.onrender.com"+authorLogo[0].replace("public", "")}
                       alt=""
                     />
                     <span>

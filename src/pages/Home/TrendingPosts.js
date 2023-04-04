@@ -13,7 +13,7 @@ function TrendingPosts({post}) {
                 <Link to={`/blogs/${item._id}`} state={{item}} key={index}>
                 <div className={Style.trendingPost}>
                   <div className={Style.trendingthamnails}>
-                    <img src={item.postbanner && "http://localhost:4000"+item.postbanner.replace("public", "")} alt="" />
+                    <img src={item.postbanner && "https://blog-app-fjqe.onrender.com"+item.postbanner.replace("public", "")} alt="" />
                   </div>
                   <div className={Style.trendingpostContent}>
                     <h2>{item.title}</h2>

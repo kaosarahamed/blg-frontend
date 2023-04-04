@@ -14,7 +14,7 @@ function Comments() {
   const [response, setResponse] = useState("")
   const [notify, setNotify] = useState(false);
 const getAllComment = async () => {
-  await axios.get("http://localhost:4000/comment/")
+  await axios.get("https://blog-app-fjqe.onrender.com/comment/")
   .then((res) => {
     setComment(res.data)
   }).catch((err) => {
@@ -31,7 +31,7 @@ useEffect(() => {
 
 
 const deletePost = async (id) => {
-  await axios.delete(`http://localhost:4000/comment/delete/${id}`)
+  await axios.delete(`https://blog-app-fjqe.onrender.com/comment/delete/${id}`)
   .then((res) => {
     setResponse(res.data.message);
     getAllComment()
@@ -76,7 +76,7 @@ const deletePost = async (id) => {
                     <h3>{new Date(date).toDateString()}</h3>
                     </div>
                     <img
-                        src={userPic && "http://localhost:4000"+userPic.replace("public", "")}
+                        src={userPic && "https://blog-app-fjqe.onrender.com"+userPic.replace("public", "")}
                         alt=""
                       />
                     <p>

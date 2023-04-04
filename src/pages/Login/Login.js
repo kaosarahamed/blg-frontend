@@ -29,7 +29,7 @@ const navigate = useNavigate();
       setResponse("Password does not match")
       setLoading(false)
     }else{
-      await axios.post("http://localhost:4000/user/login", user)
+      await axios.post("https://blog-app-fjqe.onrender.com/user/login", user)
             .then((res) => {
               setResponse(res.data.message);
               localStorage.setItem("token", res.data.token);

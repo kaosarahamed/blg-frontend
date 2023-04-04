@@ -10,6 +10,7 @@ useEffect(() => {
   axios.get(url)
   .then((res) => {
     setadminData(res.data)
+    setResponse(res.data.message)
   }).catch((err) => {
     setResponse(err.response.data.message)
   })

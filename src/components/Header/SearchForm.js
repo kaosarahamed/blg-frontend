@@ -6,7 +6,7 @@ import Style from './css/SearchForm.module.css';
 function SearchForm(props) {
 
   const [search, setSearch] = useState("")
-  const {adminData} = useFetch("http://localhost:4000/post/");
+  const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/post/");
 const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();

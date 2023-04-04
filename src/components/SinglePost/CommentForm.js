@@ -17,7 +17,7 @@ const [comData, setcomData] = useState([]);
 
 const handleSubmit = async (e) => {
 e.preventDefault();
-  await axios.post("http://localhost:4000/comment", comment)
+  await axios.post("https://blog-app-fjqe.onrender.com/comment", comment)
   .then((res) => {
     setResponse(res.data.message);
     getAllComment(data);
@@ -30,7 +30,7 @@ e.preventDefault();
 
 
 const getAllComment = async (data) => {
-await axios.get(`http://localhost:4000/comment/${data._id}`)
+await axios.get(`https://blog-app-fjqe.onrender.com/comment/${data._id}`)
 .then((res) => {
   setcomData(res.data)
 })
@@ -62,7 +62,7 @@ const handleChange = (e) => {
                 return(
                   <div className={Style.commentList} key={index}>
                 <img
-                  src={userPic && "http://localhost:4000"+userPic.replace("public", "")}
+                  src={userPic && "https://blog-app-fjqe.onrender.com"+userPic.replace("public", "")}
                   alt=""
                 />
                 <span>

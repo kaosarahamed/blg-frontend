@@ -70,3 +70,6 @@
   color: #fff;
   font-weight: 500;
 }
+.socialButtons a {
+  text-decoration: none;
+}

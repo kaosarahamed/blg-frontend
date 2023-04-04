@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { RxCross2, RxHamburgerMenu, RxMagnifyingGlass } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
-import Style from "./css/Header.module.css";
 import MobileMenu from "./MobileMenu";
 import SearchForm from "./SearchForm";
+import Style from "./css/Header.module.css";
 
 function Header() {
 const [menu, setMenu] = useState(false);
@@ -13,9 +13,16 @@ const navigate = useNavigate();
 const menuref = useRef();
 const searchref = useRef();
   useEffect(() => {
+
+
+    
     let handeler = (e) => {
-      if (!menuref.current.contains(e.target)) {
-        setMenu(false);
+      if(menuref.current !== null){
+        if (!menuref.current.contains(e.target)) {
+          setMenu(false);
+        }
+      }else{
+        return null
       }
       if (!searchref.current.contains(e.target)) {
         setSearch(false);
@@ -26,7 +33,7 @@ const searchref = useRef();
 
   const logo = localStorage.getItem("userlogo")
   const replacepath = logo && logo.replace("public", "");
-  const replacelogo = "http://localhost:4000"+replacepath;
+  const replacelogo = "https://blog-app-fjqe.onrender.com"+replacepath;
 const token = localStorage.getItem("token");
 
 const logut = () => {
@@ -38,7 +45,7 @@ const logut = () => {
   navigate("/login")
 }
 
-const {adminData} = useFetch("http://localhost:4000/admin");
+const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/admin");
 
 const authorLogo = adminData.map((item) => item.adminlogo)
 
@@ -46,7 +53,7 @@ const authorLogo = adminData.map((item) => item.adminlogo)
     <header >
       <div className={Style.headerContainer} >
         <div className={Style.logoAre} >
-          <Link to="/"><img src={authorLogo[0] && "http://localhost:4000"+authorLogo[0].replace("public", "")} alt="" /></Link>
+          <Link to="/"><img src={authorLogo[0] && "https://blog-app-fjqe.onrender.com"+authorLogo[0].replace("public", "")} alt="" /></Link>
         </div>
         <div className={Style.menuArea}> 
           <div className={Style.menu}>

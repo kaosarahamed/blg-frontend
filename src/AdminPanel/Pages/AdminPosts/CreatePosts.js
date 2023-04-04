@@ -27,7 +27,7 @@ formData.append("title", title);
 formData.append("description", description);
 categories.forEach(item => {formData.append("categories[]", item)})
 formData.append("postbanner", postbanner)
-await axios.post("http://localhost:4000/post", formData, {
+await axios.post("https://blog-app-fjqe.onrender.com/post", formData, {
     headers: {
       'content-type': 'multipart/form-data',
     }})

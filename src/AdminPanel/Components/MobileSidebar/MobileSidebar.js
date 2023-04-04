@@ -9,13 +9,13 @@ function MobileSidebar(props) {
   const [data, setData] = useState([]);
   const [response, setResponse] = useState("");
   useEffect(() => {
-    axios.get("http://localhost:4000/admin")
+    axios.get("https://blog-app-fjqe.onrender.com/admin")
     .then((res) => {
       setData(res.data[0])
     }).catch((err) => {
       setResponse(err.response.data.message)
     })
-  });
+  },[]);
 
   return (
     <div className={`${Style.mobileSidebar} ${
@@ -24,7 +24,7 @@ function MobileSidebar(props) {
       <div className={Style.mobcontainer}>
         <h2>{response}</h2>
             <div className={Style.logo}>
-              <img src={data.adminlogo && "http://localhost:4000"+data.adminlogo.replace("public", "")} alt="" />
+              <img src={data.adminlogo && "https://blog-app-fjqe.onrender.com"+data.adminlogo.replace("public", "")} alt="" />
             </div>
             <div className={Style.panelMenu}>
               <ul>

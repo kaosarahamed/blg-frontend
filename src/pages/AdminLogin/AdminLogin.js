@@ -10,6 +10,7 @@ function AdminLogin({setIsLogin}) {
         email : "",
         password : ""
     });
+    const {email, password} = author;
     const [isLoading, setIsLoading] = useState(false);
     const [responed, setResponed] = useState("");
 const navigate = useNavigate()
@@ -22,19 +23,21 @@ const navigate = useNavigate()
         setIsLoading(true)
         e.preventDefault()
 
-        await axios("http://localhost:4000/author/login")
+        await axios.post("https://blog-app-fjqe.onrender.com/author/login", author)
         .then((res) => {
             setResponed(res.data.message)
-            setTimeout(() => {
-                setIsLoading(false)
-                setIsLogin(true);
-                navigate("/")
-            }, 2000);
-        }).catch((err) => {
-            setResponed(err.response.data.message);
             setIsLoading(false)
-        })
+            setTimeout(() => {
+              setIsLogin(true)
+              navigate("/")
+              }, 2000);
+            }).catch((err) => {
+              setResponed(err.response.data.message);
+              setIsLoading(false)
+            })
     }
+
+
 
   return (
     <div className={Style.adminLogin}>
@@ -45,23 +48,27 @@ const navigate = useNavigate()
           <h2>Login Admin Panle</h2>
           <form onSubmit={handleSubmit}>
             <span>
-              <label htmlFor="username">Username</label>
+              <label htmlFor="email">Email</label>
               <input
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Enter your username"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your emall"
                 onChange={(e) => handleChange(e)}
+                required
+                value={email}
               />
             </span>
             <span>
-              <label htmlFor="email">Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 name="password"
                 id="password"
                 placeholder="Enter your password"
                 onChange={(e) => handleChange(e)}
+                required
+                value={password}
               />
             </span>
             <button type="submit">{isLoading ? "Loading..." : "Login"}</button>

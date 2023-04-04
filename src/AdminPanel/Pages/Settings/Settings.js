@@ -9,7 +9,7 @@ const [response, setResponse] = useState('');
 
 
 useEffect(() => {
-  axios.get("http://localhost:4000/admin")
+  axios.get("https://blog-app-fjqe.onrender.com/admin")
   .then((res) => {
     setData(res.data)
   }).catch((err) => {
@@ -34,11 +34,11 @@ useEffect(() => {
                   <div className={Style.logoHeader}> 
                     <span>
                     <h2>Site Logo</h2>
-                    <img src={adminlogo && "http://localhost:4000"+adminlogo.replace("public", "")} alt="" />
+                    <img src={adminlogo && "https://blog-app-fjqe.onrender.com"+adminlogo.replace("public", "")} alt="" />
                     </span>
                     <span>
                     <h2>Admin Profile Pic</h2>
-                    <img src={adminPic && "http://localhost:4000"+adminPic.replace("public", "")} alt="" />
+                    <img src={adminPic && "https://blog-app-fjqe.onrender.com"+adminPic.replace("public", "")} alt="" />
                     </span>
                   </div>
                   <div className={Style.commentBody}>

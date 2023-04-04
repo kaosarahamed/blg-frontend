@@ -34,7 +34,7 @@ if(password.length < 8){
   setResponse("Password does not match")
   setLoading(false)
 }else{
-  await axios.patch(`http://localhost:4000/user/${id}`, formData, {
+  await axios.patch(`https://blog-app-fjqe.onrender.com/user/${id}`, formData, {
   headers: {
     'content-type': 'multipart/form-data',
   }})
@@ -61,7 +61,7 @@ const handleChange = (e) => {
   setUser({...user, [e.target.name] : e.target.value})
 }
 const getuser = async (id) => {
-  await axios.get(`http://localhost:4000/user/${id}`)
+  await axios.get(`https://blog-app-fjqe.onrender.com/user/${id}`)
   .then((res) => {
     setUser(res.data);
     localStorage.setItem("userlogo", res.data.userlogo);

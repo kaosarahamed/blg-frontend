@@ -11,7 +11,7 @@ function Blog() {
   const [loadMore, setLoadMore] = useState(6);
   
   useEffect(() => {
-    axios.get("http://localhost:4000/post/")
+    axios.get("https://blog-app-fjqe.onrender.com/post/")
     .then((res) => {
       setPost(res.data)
     }).catch((err) => {

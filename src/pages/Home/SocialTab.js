@@ -4,7 +4,7 @@ import useFetch from "../../Hooks/useFetch";
 import Style from "./css/SocialTab.module.css";
 function SocialTab() {
 
-  const {adminData} = useFetch("http://localhost:4000/admin");
+  const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/admin");
 
   const fb = adminData.map(item => item.facebook);
   const tw = adminData.map(item => item.twitter);

@@ -18,14 +18,14 @@ function AdminHeader({setIsLogin}) {
     };
     document.addEventListener("mousedown", handeler);
 
-    axios.get("http://localhost:4000/admin")
+    axios.get("https://blog-app-fjqe.onrender.com/admin")
     .then((res) => {
       setData(res.data[0])
     }).catch((err) => {
       setResponse(err.response.data.message)
     })
 
-  });
+  },[]);
 
   return (
      <div className={Style.adminBard}>
@@ -37,7 +37,7 @@ function AdminHeader({setIsLogin}) {
               <div className={Style.navContainer}>
                 <Link to="" onClick={() => setIsLogin(false)}>Logout</Link>
                 <img
-                  src={data.adminPic && "http://localhost:4000"+data.adminPic.replace("public", "")}
+                  src={data.adminPic && "https://blog-app-fjqe.onrender.com"+data.adminPic.replace("public", "")}
                   alt=""
                   
                 />

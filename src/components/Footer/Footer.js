@@ -3,7 +3,7 @@ import Style from "./css/Footer.module.css";
 
 function Footer() {
 
-  const {adminData} = useFetch("http://localhost:4000/admin");
+  const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/admin");
 
   const footerText = adminData.map(item => item.footerText);
   const copyRightText = adminData.map(item => item.copytext);

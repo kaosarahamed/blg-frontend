@@ -17,7 +17,7 @@ function ListPosts({post}) {
             <div className={Style.editorPosts} >
                 <div className={Style.postThamnail}>
                   <img
-                    src={item.postbanner && "http://localhost:4000"+item.postbanner.replace("public", "")}
+                    src={item.postbanner && "https://blog-app-fjqe.onrender.com"+item.postbanner.replace("public", "")}
                     alt=""
                   />
                 </div>

@@ -33,7 +33,7 @@ function EditSetting() {
 
 
 
-    await axios.patch(`http://localhost:4000/admin/${id}`, formData, {
+    await axios.patch(`https://blog-app-fjqe.onrender.com/admin/${id}`, formData, {
     headers: {
       'content-type': 'multipart/form-data',
     }})
@@ -48,7 +48,7 @@ function EditSetting() {
 
 
     const getData = async () => {
-    await axios.get("http://localhost:4000/admin")
+    await axios.get("https://blog-app-fjqe.onrender.com/admin")
     .then((res) => {setData(res.data[0])}).catch((err) => setData(err.data.response.message))
     }
 

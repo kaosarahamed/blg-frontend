@@ -40,7 +40,7 @@ formData.append("userlogo", userlogo)
     setResponse("Password does not match")
     setLoading(false)
   }else{
-    await axios.post("http://localhost:4000/user/singup", formData, {
+    await axios.post("https://blog-app-fjqe.onrender.com/user/singup", formData, {
     headers: {
       'content-type': 'multipart/form-data',
     }})

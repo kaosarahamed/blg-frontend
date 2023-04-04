@@ -33,7 +33,7 @@ function EditPost() {
     formData.append("description", description);
     categories.forEach(item => {formData.append("categories[]", item)})
     formData.append("postbanner", postbanner)
-    await axios.patch(`http://localhost:4000/post/${id}`, formData, {
+    await axios.patch(`https://blog-app-fjqe.onrender.com/post/${id}`, formData, {
         headers: {
           'content-type': 'multipart/form-data',
         }})
@@ -67,7 +67,7 @@ function EditPost() {
     }
 
     const getAllPost = async (id) => {
-        await axios.get(`http://localhost:4000/post/${id}`)
+        await axios.get(`https://blog-app-fjqe.onrender.com/post/${id}`)
         .then((res) => {
           setPosts(res.data);
           setCategorie(res.data.categories);

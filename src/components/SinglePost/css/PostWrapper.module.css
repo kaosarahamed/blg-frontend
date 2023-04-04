@@ -26,6 +26,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50px;
+  object-fit: cover;
 }
 .adminWrapper span h3 {
   font-size: 18px;

@@ -69,10 +69,23 @@
   background-color: #404145;
   padding: 15px 100px;
 }
+@media screen and (max-width: 1500px) {
+  .settings {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   .settings {
     margin-left: 0px;
+    width: 100%;
   }
+  .logoHeader {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .commentBody {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .settings {
     padding: 10px;
   }
@@ -83,5 +96,13 @@
   .menuLists span {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+@media screen and (max-width: 550px) {
+  .logoSetting {
+    padding: 20px;
+  }
+  .commentBody {
+    overflow: hidden;
   }
 }

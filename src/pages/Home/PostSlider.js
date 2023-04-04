@@ -34,7 +34,7 @@ function PostSlider({post}) {
     };
   }, [index]);
 
-  const {adminData} = useFetch("http://localhost:4000/admin");
+  const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/admin");
 
 const authorLogo = adminData.map((item) => item.adminPic);
 const adminname = adminData.map((item) => item.adminname);
@@ -61,7 +61,7 @@ const adminname = adminData.map((item) => item.adminname);
             <div className={`${Style.sliderArea} ${position}`} > 
             
             <div className={Style.imgageSiderbar}>
-              <img src={item.postbanner && "http://localhost:4000"+item.postbanner.replace("public", "")} alt="" />
+              <img src={item.postbanner && "https://blog-app-fjqe.onrender.com"+item.postbanner.replace("public", "")} alt="" />
             </div>
             <div className={Style.contentSidebar}>
               <div className={Style.category}>
@@ -74,7 +74,7 @@ const adminname = adminData.map((item) => item.adminname);
               </div>
               <div className={Style.adminBar}>
                 <img
-                  src={authorLogo[0] && "http://localhost:4000"+authorLogo[0].replace("public", "")}
+                  src={authorLogo[0] && "https://blog-app-fjqe.onrender.com"+authorLogo[0].replace("public", "")}
                   alt=""
                 />
                 <span>

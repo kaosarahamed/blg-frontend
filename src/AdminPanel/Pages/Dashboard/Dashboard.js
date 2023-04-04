@@ -9,13 +9,13 @@ const [error, setError] = useState('');
 const [comment, setComment] = useState([]);
 
 useEffect(() => {
-  axios.get("http://localhost:4000/post/")
+  axios.get("https://blog-app-fjqe.onrender.com/post/")
   .then((res) => {
     setPost(res.data)
   }).catch(err => setError(err.response.data.message));
 
 
-  axios.get("http://localhost:4000/comment/")
+  axios.get("https://blog-app-fjqe.onrender.com/comment/")
   .then((res) => {
     setComment(res.data)
   }).catch((err) => {
@@ -43,7 +43,7 @@ const sliceComment = comment.slice(0, 5);
                           <div className={Style.editorPosts} >
                               <div className={Style.postThamnail}>
                                 <img
-                                  src={item.postbanner && "http://localhost:4000"+item.postbanner.replace("public", "")}
+                                  src={item.postbanner && "https://blog-app-fjqe.onrender.com"+item.postbanner.replace("public", "")}
                                   alt=""
                                 />
                               </div>
@@ -69,7 +69,7 @@ const sliceComment = comment.slice(0, 5);
                           <Link to={`/comment/${_id}`} key={index} state={{_id}}>
                           <div className={Style.commentItem} >
                           <div className={Style.commentHead}>
-                            <img src={userPic && "http://localhost:4000"+userPic.replace("public", "")} alt="" />
+                            <img src={userPic && "https://blog-app-fjqe.onrender.com"+userPic.replace("public", "")} alt="" />
                             <span>
                             <h2>{username}</h2>
                           <h3>{new Date(date).toDateString()}</h3>

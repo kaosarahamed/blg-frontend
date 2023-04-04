@@ -43,7 +43,11 @@
   flex-direction: column;
   gap: 20px;
 }
-
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 1420px) {
   .postContainer {
     width: 95%;

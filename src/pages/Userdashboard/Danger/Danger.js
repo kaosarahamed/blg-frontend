@@ -8,7 +8,7 @@ function Danger() {
   const id = localStorage.getItem("id");
 const navigate = useNavigate()
   const deleteUser = async () => {
-    await axios.delete(`http://localhost:4000/user/${id}`)
+    await axios.delete(`https://blog-app-fjqe.onrender.com/user/${id}`)
     .then((res) => {
       setResponse(res.data.message);
       localStorage.removeItem("token");

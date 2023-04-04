@@ -4,7 +4,7 @@ import useFetch from "../../Hooks/useFetch";
 import Style from "./css/WidgetOne.module.css";
 function WidgetOne() {
 
-  const {adminData} = useFetch("http://localhost:4000/admin");
+  const {adminData} = useFetch("https://blog-app-fjqe.onrender.com/admin");
 
   const fb = adminData.map(item => item.facebook);
   const tw = adminData.map(item => item.twitter);
@@ -15,7 +15,7 @@ function WidgetOne() {
   const authorLogo = adminData.map((item) => item.adminlogo)
   return (
     <div className={Style.widgetOne}>
-            <img src={authorLogo[0] && "http://localhost:4000"+authorLogo[0].replace("public", "")} alt="" />
+            <img src={authorLogo[0] && "https://blog-app-fjqe.onrender.com"+authorLogo[0].replace("public", "")} alt="" />
             <p>
              {body}
             </p>

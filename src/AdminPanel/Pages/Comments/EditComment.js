@@ -30,7 +30,7 @@ const handleSubmit = async (e) => {
   formData.append("username", username);
   formData.append("comment", comment);
   formData.append("userPic", userPic)
-  await axios.patch(`http://localhost:4000/comment/${id}`, formData, {
+  await axios.patch(`https://blog-app-fjqe.onrender.com/comment/${id}`, formData, {
       headers: {
         'content-type': 'multipart/form-data',
       }})
@@ -53,7 +53,7 @@ const handleSubmit = async (e) => {
 
 
   const getComment = async (id) => {
-    await axios.get(`http://localhost:4000/comment/single/${id}`)
+    await axios.get(`https://blog-app-fjqe.onrender.com/comment/single/${id}`)
     .then((res) => {
         setUserComment(res.data);
     }).catch((err) => {

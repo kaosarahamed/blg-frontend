@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 import Style from './css/AdminPosts.module.css';
 function AdminPosts() {
 
-
 const [post, setPots] = useState([]);
 const [response, setResponse] = useState("")
 
 const getAllPost = async () => {
-  await axios.get("http://localhost:4000/post")
+  await axios.get("https://blog-app-fjqe.onrender.com/post")
   .then((res) => {
     setPots(res.data)
   }).catch((err) => {
@@ -20,11 +19,12 @@ const getAllPost = async () => {
 
 
 useEffect(() => {
+
   getAllPost()
 },[])
 
 const deletePost = async (id) => {
-  await axios.delete(`http://localhost:4000/post/${id}`)
+  await axios.delete(`https://blog-app-fjqe.onrender.com/post/${id}`)
   .then((res) => {
     setResponse(res.data.message);
     getAllPost()
@@ -63,7 +63,7 @@ const deletePost = async (id) => {
                     </div>
                     <div className={Style.admin}>
                       <img
-                        src={item.postbanner && "http://localhost:4000"+item.postbanner.replace("public", "")}
+                        src={item.postbanner && "https://blog-app-fjqe.onrender.com"+item.postbanner.replace("public", "")}
                         alt=""
                       />
                     </div>

@@ -1,16 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
+
 import { Outlet } from 'react-router-dom';
 import GridPosts from '../../components/GridPosts/GridPosts';
 import ListPosts from "../../components/ListPosts/ListPosts";
 import CategoriesTab from './CategoriesTab';
-import Style from "./css/Home.module.css";
 import PostSlider from './PostSlider';
 import SocialTab from './SocialTab';
 import SubscriptionSection from './SubscriptionSection';
 import TrendingPosts from './TrendingPosts';
-
-
+import Style from "./css/Home.module.css";
 
 
 
@@ -19,7 +18,7 @@ function Home() {
   const [error, setError] = useState("");
   
   useEffect(() => {
-    axios.get("http://localhost:4000/post/")
+    axios.get("https://blog-app-fjqe.onrender.com/post/")
     .then((res) => {
       setPost(res.data)
     }).catch((err) => {
@@ -34,7 +33,7 @@ function Home() {
 
   return (
    <>
-   <PostSlider post={sliderPost}/>
+    <PostSlider post={sliderPost}/>
    {error && <p>{error}</p> }
     <div className={Style.postSection}>
       <div className={Style.postContainer}>
@@ -67,8 +66,7 @@ function Home() {
 
     <SubscriptionSection />
     <Outlet />
-   </>
-
+    </>
   )
 }
 

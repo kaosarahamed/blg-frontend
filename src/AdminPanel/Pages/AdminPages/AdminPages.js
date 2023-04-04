@@ -2,6 +2,9 @@ import { FaPenSquare, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Style from "./css/AdminPages.module.css";
 function AdminPages() {
+
+
+
   return (
     <div className={Style.dahsboardPages}>
               <div className={Style.pagesContainer}>
