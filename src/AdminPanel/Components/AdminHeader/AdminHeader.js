@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import MobileSidebar from "../MobileSidebar/MobileSidebar";
-import Style from './css/AdminHeader.module.css';
-function AdminHeader({setIsLogin}) {
-
+import Style from "./css/AdminHeader.module.css";
+function AdminHeader({ setIsLogin }) {
   const [sidebar, setSidebar] = useState(false);
   const [data, setData] = useState([]);
   const [response, setResponse] = useState("");
@@ -18,34 +17,46 @@ function AdminHeader({setIsLogin}) {
     };
     document.addEventListener("mousedown", handeler);
 
-    axios.get("https://blog-app-fjqe.onrender.com/admin")
-    .then((res) => {
-      setData(res.data[0])
-    }).catch((err) => {
-      setResponse(err.response.data.message)
-    })
-
-  },[]);
+    axios
+      .get("https://tanvirblog007-71b473c5e0c8.herokuapp.com/admin")
+      .then((res) => {
+        setData(res.data[0]);
+      })
+      .catch((err) => {
+        setResponse(err.response.data.message);
+      });
+  }, []);
 
   return (
-     <div className={Style.adminBard}>
-     <div className={Style.headerNav} >
-      {response}
-              <div className={Style.mobileMenu}>
-              <p onClick={() => setSidebar(!sidebar)}>{sidebar ? <RxCross2 /> : <RxHamburgerMenu />}</p>
-              </div>
-              <div className={Style.navContainer}>
-                <Link to="" onClick={() => setIsLogin(false)}>Logout</Link>
-                <img
-                  src={data.adminPic && "https://blog-app-fjqe.onrender.com"+data.adminPic.replace("public", "")}
-                  alt=""
-                  
-                />
-              </div>
+    <div className={Style.adminBard}>
+      <div className={Style.headerNav}>
+        {response}
+        <div className={Style.mobileMenu}>
+          <p onClick={() => setSidebar(!sidebar)}>
+            {sidebar ? <RxCross2 /> : <RxHamburgerMenu />}
+          </p>
+        </div>
+        <div className={Style.navContainer}>
+          <Link to="" onClick={() => setIsLogin(false)}>
+            Logout
+          </Link>
+          <img
+            src={
+              data.adminPic &&
+              "https://tanvirblog007-71b473c5e0c8.herokuapp.com" +
+                data.adminPic.replace("public", "")
+            }
+            alt=""
+          />
+        </div>
       </div>
-      <MobileSidebar isShowref={isShowref} sidebar={sidebar} setSidebar={setSidebar} />
-     </div>
-  )
+      <MobileSidebar
+        isShowref={isShowref}
+        sidebar={sidebar}
+        setSidebar={setSidebar}
+      />
+    </div>
+  );
 }
 
 export default AdminHeader;

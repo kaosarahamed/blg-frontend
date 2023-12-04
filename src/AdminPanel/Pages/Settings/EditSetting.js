@@ -1,75 +1,99 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import Style from "./css/EditSetting.module.css";
 function EditSetting() {
+  const [data, setData] = useState([]);
+  const {
+    adminname,
+    about,
+    facebook,
+    twitter,
+    linkedin,
+    instagram,
+    youtube,
+    copytext,
+    footerText,
+  } = data;
+  const [notify, setNotify] = useState(false);
+  const [adminlogo, setadminlogo] = useState(null);
+  const [adminPic, setadminPic] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState("");
+  const location = useLocation();
+  const id = location.state._id;
 
-    const [data, setData] = useState([])
-    const {adminname, about, facebook, twitter, linkedin, instagram, youtube, copytext, footerText} = data;
-    const [notify, setNotify] = useState(false);
-    const [adminlogo, setadminlogo] = useState(null);
-    const [adminPic, setadminPic] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [response, setResponse] = useState("");
-   const location = useLocation();
-   const id = location.state._id
-   
-    const handleSubmit = async (e) => {
-        setLoading(true);
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append("adminname", adminname);
-        formData.append("about", about);
-        formData.append("facebook", facebook);
-        formData.append("twitter", twitter);
-        formData.append("linkedin", linkedin);
-        formData.append("instagram", instagram);
-        formData.append("youtube", youtube);
-        formData.append("copytext", copytext);
-        formData.append("footerText", footerText);
-        formData.append("adminlogo", adminlogo)
-        formData.append("adminPic", adminPic)
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("adminname", adminname);
+    formData.append("about", about);
+    formData.append("facebook", facebook);
+    formData.append("twitter", twitter);
+    formData.append("linkedin", linkedin);
+    formData.append("instagram", instagram);
+    formData.append("youtube", youtube);
+    formData.append("copytext", copytext);
+    formData.append("footerText", footerText);
+    formData.append("adminlogo", adminlogo);
+    formData.append("adminPic", adminPic);
 
+    await axios
+      .patch(
+        `https://tanvirblog007-71b473c5e0c8.herokuapp.com/admin/${id}`,
+        formData,
+        {
+          headers: {
+            "content-type": "multipart/form-data",
+          },
+        }
+      )
+      .then((res) => {
+        setResponse(res.data.message);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setResponse(err.response.data.message);
+        setLoading(false);
+      });
+  };
 
+  const getData = async () => {
+    await axios
+      .get("https://tanvirblog007-71b473c5e0c8.herokuapp.com/admin")
+      .then((res) => {
+        setData(res.data[0]);
+      })
+      .catch((err) => setData(err.data.response.message));
+  };
 
-    await axios.patch(`https://blog-app-fjqe.onrender.com/admin/${id}`, formData, {
-    headers: {
-      'content-type': 'multipart/form-data',
-    }})
-          .then((res) => {
-            setResponse(res.data.message);
-            setLoading(false)
-          }).catch((err) => {
-            setResponse(err.response.data.message);
-            setLoading(false)
-          });
-    }
+  useEffect(() => {
+    getData();
+  }, []);
 
-
-    const getData = async () => {
-    await axios.get("https://blog-app-fjqe.onrender.com/admin")
-    .then((res) => {setData(res.data[0])}).catch((err) => setData(err.data.response.message))
-    }
-
-useEffect(() => {
-    getData()
-},[])
-
-const handleChange = (e) => {
-    setData({...data, [e.target.name] : e.target.value})
-}
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className={Style.editSetting}>
       <div className={Style.settingContainer}>
-      {response && <div className={`${Style.notification} ${
-        notify && `${Style.active}`}`}>
-          <h3>{response}</h3>
-          <RxCross2 onClick={() => {setNotify(true)}}/>
-          </div>}
-            <div className={Style.editSettingForm}>
-            <form onSubmit={handleSubmit}>
+        {response && (
+          <div
+            className={`${Style.notification} ${notify && `${Style.active}`}`}
+          >
+            <h3>{response}</h3>
+            <RxCross2
+              onClick={() => {
+                setNotify(true);
+              }}
+            />
+          </div>
+        )}
+        <div className={Style.editSettingForm}>
+          <form onSubmit={handleSubmit}>
             <span>
               <label htmlFor="adminname">Enter Admin Name</label>
               <input
@@ -83,7 +107,15 @@ const handleChange = (e) => {
             </span>
             <span>
               <label htmlFor="about">Enter About Infor</label>
-              <textarea name="about" id="about" value={about} placeholder="write about info"  onChange={(e) => handleChange(e)} cols="30" rows="10"></textarea>
+              <textarea
+                name="about"
+                id="about"
+                value={about}
+                placeholder="write about info"
+                onChange={(e) => handleChange(e)}
+                cols="30"
+                rows="10"
+              ></textarea>
             </span>
             <span>
               <label htmlFor="facebook">Enter Facebook Url</label>
@@ -164,30 +196,32 @@ const handleChange = (e) => {
             </span>
             <span>
               <label htmlFor="postbanner">Admin Logo</label>
-              <input 
-              type="file" 
-              name="adminlogo" 
-              id="adminlogo"
-              onChange={(e) => setadminlogo(e.target.files[0])} 
-              required
+              <input
+                type="file"
+                name="adminlogo"
+                id="adminlogo"
+                onChange={(e) => setadminlogo(e.target.files[0])}
+                required
               />
             </span>
             <span>
               <label htmlFor="postbanner">Admin Profile Pic</label>
-              <input 
-              type="file" 
-              name="adminPic" 
-              id="adminPic"
-              onChange={(e) => setadminPic(e.target.files[0])}
-              required 
+              <input
+                type="file"
+                name="adminPic"
+                id="adminPic"
+                onChange={(e) => setadminPic(e.target.files[0])}
+                required
               />
             </span>
-            <button type="submit">{loading ? "Loading..." : "Save Setting"}</button>
-            </form>
-     </div>
+            <button type="submit">
+              {loading ? "Loading..." : "Save Setting"}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default EditSetting
+export default EditSetting;

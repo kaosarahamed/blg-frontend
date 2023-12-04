@@ -1,93 +1,100 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Style from './css/Dashboard.module.css';
+import Style from "./css/Dashboard.module.css";
 function Dashboard() {
+  const [post, setPost] = useState([]);
+  const [error, setError] = useState("");
+  const [comment, setComment] = useState([]);
 
-const [post, setPost] = useState([]);
-const [error, setError] = useState('');
-const [comment, setComment] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://tanvirblog007-71b473c5e0c8.herokuapp.com/post/")
+      .then((res) => {
+        setPost(res.data);
+      })
+      .catch((err) => setError(err.response.data.message));
 
-useEffect(() => {
-  axios.get("https://blog-app-fjqe.onrender.com/post/")
-  .then((res) => {
-    setPost(res.data)
-  }).catch(err => setError(err.response.data.message));
+    axios
+      .get("https://tanvirblog007-71b473c5e0c8.herokuapp.com/comment/")
+      .then((res) => {
+        setComment(res.data);
+      })
+      .catch((err) => {
+        setError(err.response.data.message);
+      });
+  }, []);
 
-
-  axios.get("https://blog-app-fjqe.onrender.com/comment/")
-  .then((res) => {
-    setComment(res.data)
-  }).catch((err) => {
-    setError(err.response.data.message)
-  });
-
-
-},[])
-
-
-const slicePost = post.slice(0, 8);
-const sliceComment = comment.slice(0, 5);
+  const slicePost = post.slice(0, 8);
+  const sliceComment = comment.slice(0, 5);
 
   return (
     <div className={Style.dashboard}>
-      {error && <p>{error}</p> }
-                <div className={Style.tabone}>
-                  <div className={Style.postTab}>
-                    <h5>Latest Posts</h5>
-                    <div className={Style.editorPostsList}>             
-                {slicePost.map((item, index) => {
-                  const {_id} = item
-                  return(
-                          <Link to={`/posts/${_id}`} key={index} state={{item, _id}}>
-                          <div className={Style.editorPosts} >
-                              <div className={Style.postThamnail}>
-                                <img
-                                  src={item.postbanner && "https://blog-app-fjqe.onrender.com"+item.postbanner.replace("public", "")}
-                                  alt=""
-                                />
-                              </div>
-                              <div className={Style.editorpostContent}>
-                                <h2>{item.title}</h2>
-                                <div className={Style.postfooter}>
-                                  <p>Kaosar Ahamed</p>
-                                  <p>{new Date(item.createdAt).toDateString()}</p>
-                                </div>
-                              </div>
-                            </div>
-                          </Link>
-                        )
-                      })}  
+      {error && <p>{error}</p>}
+      <div className={Style.tabone}>
+        <div className={Style.postTab}>
+          <h5>Latest Posts</h5>
+          <div className={Style.editorPostsList}>
+            {slicePost.map((item, index) => {
+              const { _id } = item;
+              return (
+                <Link to={`/posts/${_id}`} key={index} state={{ item, _id }}>
+                  <div className={Style.editorPosts}>
+                    <div className={Style.postThamnail}>
+                      <img
+                        src={
+                          item.postbanner &&
+                          "https://tanvirblog007-71b473c5e0c8.herokuapp.com" +
+                            item.postbanner.replace("public", "")
+                        }
+                        alt=""
+                      />
+                    </div>
+                    <div className={Style.editorpostContent}>
+                      <h2>{item.title}</h2>
+                      <div className={Style.postfooter}>
+                        <p>Kaosar Ahamed</p>
+                        <p>{new Date(item.createdAt).toDateString()}</p>
+                      </div>
                     </div>
                   </div>
-                  <div className={Style.commenTab}>
-                    <h5>Commments</h5>
-                    <div className={Style.commentList}>
-                      {sliceComment.map((item, index) => {
-                        const {username, comment, date, userPic, _id} = item;
-                        return (
-                          <Link to={`/comment/${_id}`} key={index} state={{_id}}>
-                          <div className={Style.commentItem} >
-                          <div className={Style.commentHead}>
-                            <img src={userPic && "https://blog-app-fjqe.onrender.com"+userPic.replace("public", "")} alt="" />
-                            <span>
-                            <h2>{username}</h2>
-                          <h3>{new Date(date).toDateString()}</h3>
-                            </span>
-                          </div>
-                          <p>
-                            {comment}
-                          </p>
-                        </div>
-                          </Link>
-                        )
-                      })}
-                      
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+        <div className={Style.commenTab}>
+          <h5>Commments</h5>
+          <div className={Style.commentList}>
+            {sliceComment.map((item, index) => {
+              const { username, comment, date, userPic, _id } = item;
+              return (
+                <Link to={`/comment/${_id}`} key={index} state={{ _id }}>
+                  <div className={Style.commentItem}>
+                    <div className={Style.commentHead}>
+                      <img
+                        src={
+                          userPic &&
+                          "https://tanvirblog007-71b473c5e0c8.herokuapp.com" +
+                            userPic.replace("public", "")
+                        }
+                        alt=""
+                      />
+                      <span>
+                        <h2>{username}</h2>
+                        <h3>{new Date(date).toDateString()}</h3>
+                      </span>
                     </div>
+                    <p>{comment}</p>
                   </div>
-                </div>
-            </div>
-  )
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Dashboard;
